@@ -12,7 +12,7 @@ namespace ChapAppMediator
             //register user and notify each user that a new one joined the club
             if (!_users.Contains(user))
             {
-                _users.ForEach(x => x.ReceiveMessage(x.Name, $"User {user.Name} is online"));
+                _users.ForEach(x => x.ReceiveMessage(string.Empty, $"User {user.Name} is online"));
                 _users.Add(user);
             }
 
@@ -31,7 +31,7 @@ namespace ChapAppMediator
         public void SendMessage(string senderName, string receiverName, string message)
         {
             //send message to specific user
-            var receiver = _users.FirstOrDefault(x => x.Name == receiverName);
+            var receiver = _users.FirstOrDefault(x => x.Name.Equals(receiverName));
             receiver.ReceiveMessage(senderName, message);
         }
     }

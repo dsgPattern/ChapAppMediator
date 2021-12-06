@@ -20,12 +20,12 @@ namespace ChapAppMediator
 
         public void SendMessage(string userName, string message)
         {
-            
+            _chatServer.SendMessage(Name, userName, message);
         }
 
         public void ReceiveMessage(string userName, string message)
         {
-            
+            Console.WriteLine($"Received message from {userName}: {message}");
         }
 
 

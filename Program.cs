@@ -6,7 +6,23 @@ namespace ChapAppMediator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var chatServer = new ChatServer();
+
+            var john = new ChatUser("John", chatServer);
+            var doe = new ChatUser("Doe", chatServer);
+            var andrew = new ChatUser("Andrew", chatServer);
+
+            chatServer.RegisterUser(john);
+            chatServer.RegisterUser(doe);
+
+            chatServer.RegisterUser(andrew);
+
+            chatServer.Unregister(john);
+
+            john.SendMessage("Doe", "Test message");
+
+
+            Console.ReadLine();
         }
     }
 }
