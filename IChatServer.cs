@@ -1,6 +1,6 @@
 ﻿namespace ChapAppMediator
 {
-    public interface IChatRoom
+    public interface IChatServer
     {
         void RegisterUser(IUser user);
         void Unregister(IUser user);
